@@ -9,23 +9,33 @@
 /* Begin PBXBuildFile section */
 		5206DB0924F3D65F00DA9862 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5206DB0824F3D65F00DA9862 /* AppDelegate.swift */; };
 		5206DB0B24F3D65F00DA9862 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5206DB0A24F3D65F00DA9862 /* SceneDelegate.swift */; };
-		5206DB0D24F3D65F00DA9862 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5206DB0C24F3D65F00DA9862 /* ViewController.swift */; };
+		5206DB0D24F3D65F00DA9862 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5206DB0C24F3D65F00DA9862 /* MainViewController.swift */; };
 		5206DB1024F3D65F00DA9862 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5206DB0E24F3D65F00DA9862 /* Main.storyboard */; };
 		5206DB1324F3D65F00DA9862 /* TneMovie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5206DB1124F3D65F00DA9862 /* TneMovie.xcdatamodeld */; };
 		5206DB1524F3D66100DA9862 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5206DB1424F3D66100DA9862 /* Assets.xcassets */; };
 		5206DB1824F3D66100DA9862 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5206DB1624F3D66100DA9862 /* LaunchScreen.storyboard */; };
+		5206DB2424F3D7F300DA9862 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5206DB2324F3D7F300DA9862 /* MainPresenter.swift */; };
+		5206DB2624F3D95000DA9862 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5206DB2524F3D95000DA9862 /* Movie.swift */; };
+		5206DB2824F3DE2600DA9862 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5206DB2724F3DE2600DA9862 /* MainViewController.xib */; };
+		5206DB2A24F3DEED00DA9862 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5206DB2924F3DEED00DA9862 /* ModuleBuilder.swift */; };
+		5206DB2C24F3ED4D00DA9862 /* NetworkSevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5206DB2B24F3ED4D00DA9862 /* NetworkSevice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5206DB0524F3D65F00DA9862 /* TneMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TneMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5206DB0824F3D65F00DA9862 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5206DB0A24F3D65F00DA9862 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5206DB0C24F3D65F00DA9862 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5206DB0C24F3D65F00DA9862 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5206DB0F24F3D65F00DA9862 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5206DB1224F3D65F00DA9862 /* TneMovie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TneMovie.xcdatamodel; sourceTree = "<group>"; };
 		5206DB1424F3D66100DA9862 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5206DB1724F3D66100DA9862 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5206DB1924F3D66100DA9862 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5206DB2324F3D7F300DA9862 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		5206DB2524F3D95000DA9862 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		5206DB2724F3DE2600DA9862 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		5206DB2924F3DEED00DA9862 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
+		5206DB2B24F3ED4D00DA9862 /* NetworkSevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSevice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +70,9 @@
 			children = (
 				5206DB0824F3D65F00DA9862 /* AppDelegate.swift */,
 				5206DB0A24F3D65F00DA9862 /* SceneDelegate.swift */,
-				5206DB0C24F3D65F00DA9862 /* ViewController.swift */,
+				5206DB2924F3DEED00DA9862 /* ModuleBuilder.swift */,
+				5206DB2D24F3ED6B00DA9862 /* Services */,
+				5206DB1F24F3D6B800DA9862 /* MainScreenModule */,
 				5206DB0E24F3D65F00DA9862 /* Main.storyboard */,
 				5206DB1424F3D66100DA9862 /* Assets.xcassets */,
 				5206DB1624F3D66100DA9862 /* LaunchScreen.storyboard */,
@@ -68,6 +80,49 @@
 				5206DB1124F3D65F00DA9862 /* TneMovie.xcdatamodeld */,
 			);
 			path = TneMovie;
+			sourceTree = "<group>";
+		};
+		5206DB1F24F3D6B800DA9862 /* MainScreenModule */ = {
+			isa = PBXGroup;
+			children = (
+				5206DB2224F3D7CC00DA9862 /* Model */,
+				5206DB2024F3D7A500DA9862 /* View */,
+				5206DB2124F3D7BA00DA9862 /* Presenter */,
+			);
+			path = MainScreenModule;
+			sourceTree = "<group>";
+		};
+		5206DB2024F3D7A500DA9862 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5206DB0C24F3D65F00DA9862 /* MainViewController.swift */,
+				5206DB2724F3DE2600DA9862 /* MainViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5206DB2124F3D7BA00DA9862 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				5206DB2324F3D7F300DA9862 /* MainPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		5206DB2224F3D7CC00DA9862 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5206DB2524F3D95000DA9862 /* Movie.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5206DB2D24F3ED6B00DA9862 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5206DB2B24F3ED4D00DA9862 /* NetworkSevice.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +186,7 @@
 				5206DB1824F3D66100DA9862 /* LaunchScreen.storyboard in Resources */,
 				5206DB1524F3D66100DA9862 /* Assets.xcassets in Resources */,
 				5206DB1024F3D65F00DA9862 /* Main.storyboard in Resources */,
+				5206DB2824F3DE2600DA9862 /* MainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,10 +197,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5206DB2424F3D7F300DA9862 /* MainPresenter.swift in Sources */,
+				5206DB2624F3D95000DA9862 /* Movie.swift in Sources */,
 				5206DB1324F3D65F00DA9862 /* TneMovie.xcdatamodeld in Sources */,
-				5206DB0D24F3D65F00DA9862 /* ViewController.swift in Sources */,
+				5206DB0D24F3D65F00DA9862 /* MainViewController.swift in Sources */,
+				5206DB2A24F3DEED00DA9862 /* ModuleBuilder.swift in Sources */,
 				5206DB0924F3D65F00DA9862 /* AppDelegate.swift in Sources */,
 				5206DB0B24F3D65F00DA9862 /* SceneDelegate.swift in Sources */,
+				5206DB2C24F3ED4D00DA9862 /* NetworkSevice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
