@@ -14,20 +14,38 @@ protocol MainViewProtocol: class {
 }
 
 protocol MainViewPresenterProtocol: class {
-    init(view: MainViewProtocol, networkSevice: NetworkServiceProtocol)
+    init(view: MainViewProtocol,
+         networkSevice: NetworkServiceProtocol,
+         coreDataService: CoreDataServiceProtocol,
+         router: RouterProtocol)
+    
     func getPage()
-    var pages: [Page]? { get set }
+    func tapOnSaved(movie: [Movie]?)
+    func saveToFavorits(movie: Movie?)
+    
+    var pages: [Page] { get set }
+    var movies: [Movie] { get set }
 }
 
 class MainPresenter: MainViewPresenterProtocol {
+    
     weak var view: MainViewProtocol?
     let networkSevice: NetworkServiceProtocol
-    var pages: [Page]?
+    var coreDataService: CoreDataServiceProtocol?
+    var router: RouterProtocol?
+    
+    var pages: [Page] = []
+    var movies: [Movie] = []
     var currentPage: Int = 1
     
-    required init(view: MainViewProtocol, networkSevice: NetworkServiceProtocol) {
+    required init(view: MainViewProtocol,
+                  networkSevice: NetworkServiceProtocol,
+                  coreDataService: CoreDataServiceProtocol,
+                  router: RouterProtocol) {
         self.view = view
         self.networkSevice = networkSevice
+        self.coreDataService = coreDataService
+        self.router = router
         getPage()
     }
 
@@ -39,7 +57,8 @@ class MainPresenter: MainViewPresenterProtocol {
                 switch result {
                 case .success(let page):
                     if let page = page {
-                        self.pages?.append(page)
+                        self.pages.append(page)
+                        self.movies.append(contentsOf: page.results)
                         self.view?.success()
                     }
                 case .failure(let error):
@@ -47,5 +66,13 @@ class MainPresenter: MainViewPresenterProtocol {
                 }
             }
         }
+    }
+    
+    func tapOnSaved(movie: [Movie]?) {
+        router?.showSaved(movies: movie)
+    }
+    
+    func saveToFavorits(movie: Movie?) {
+        coreDataService?.saveToDB(item: movie)
     }
 }

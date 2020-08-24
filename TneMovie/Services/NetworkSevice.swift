@@ -17,18 +17,17 @@ class NetworkSevice: NetworkServiceProtocol {
     private let apiBaseURL: String = "https://api.themoviedb.org/3"
     
     func getPopularMovies(page: Int, completion: @escaping (Result<Page?, Error>) -> Void) {
-        let popularURL: String = "/movie/popular"
-        guard let url = URL(string: apiBaseURL + popularURL) else { return }
-        
-        let config = URLSessionConfiguration.default
-        config.httpAdditionalHeaders = [
-            "api_key" : apiKey,
-            "language" : "en-US",
-            "page" : String(page)
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "https"
+        urlComponents.host = "api.themoviedb.org"
+        urlComponents.path = "/3/movie/popular"
+        urlComponents.queryItems = [
+            URLQueryItem(name: "api_key", value: apiKey),
+            URLQueryItem(name: "language", value: "en-US"),
+            URLQueryItem(name: "page", value: String(page))
         ]
-        let urlSession = URLSession(configuration: config)
-        print(url)
-        let myQuery = urlSession.dataTask(with: url) { data, _, error in
+        guard let url = urlComponents.url else { return }
+        URLSession.shared.dataTask(with: url) { data, _, error in
             if let error = error {
                 completion(.failure(error))
                 return
@@ -39,7 +38,7 @@ class NetworkSevice: NetworkServiceProtocol {
             } catch {
                 completion(.failure(error))
             }
-        }
-        myQuery.resume()
+        }.resume()
     }
+    
 }

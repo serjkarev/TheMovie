@@ -17,8 +17,13 @@
 		5206DB2424F3D7F300DA9862 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5206DB2324F3D7F300DA9862 /* MainPresenter.swift */; };
 		5206DB2624F3D95000DA9862 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5206DB2524F3D95000DA9862 /* Movie.swift */; };
 		5206DB2824F3DE2600DA9862 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5206DB2724F3DE2600DA9862 /* MainViewController.xib */; };
-		5206DB2A24F3DEED00DA9862 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5206DB2924F3DEED00DA9862 /* ModuleBuilder.swift */; };
+		5206DB2A24F3DEED00DA9862 /* AssemblyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5206DB2924F3DEED00DA9862 /* AssemblyBuilder.swift */; };
 		5206DB2C24F3ED4D00DA9862 /* NetworkSevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5206DB2B24F3ED4D00DA9862 /* NetworkSevice.swift */; };
+		5206DB3424F41B2300DA9862 /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5206DB3324F41B2300DA9862 /* SavedViewController.swift */; };
+		5206DB3624F41B6F00DA9862 /* SavedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5206DB3524F41B6F00DA9862 /* SavedPresenter.swift */; };
+		5206DB3824F4271C00DA9862 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5206DB3724F4271C00DA9862 /* CoreDataService.swift */; };
+		5206DB3A24F4292200DA9862 /* SavedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5206DB3924F4292200DA9862 /* SavedViewController.xib */; };
+		5206DB3C24F4460500DA9862 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5206DB3B24F4460500DA9862 /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,8 +39,13 @@
 		5206DB2324F3D7F300DA9862 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		5206DB2524F3D95000DA9862 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		5206DB2724F3DE2600DA9862 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
-		5206DB2924F3DEED00DA9862 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
+		5206DB2924F3DEED00DA9862 /* AssemblyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyBuilder.swift; sourceTree = "<group>"; };
 		5206DB2B24F3ED4D00DA9862 /* NetworkSevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSevice.swift; sourceTree = "<group>"; };
+		5206DB3324F41B2300DA9862 /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
+		5206DB3524F41B6F00DA9862 /* SavedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPresenter.swift; sourceTree = "<group>"; };
+		5206DB3724F4271C00DA9862 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		5206DB3924F4292200DA9862 /* SavedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavedViewController.xib; sourceTree = "<group>"; };
+		5206DB3B24F4460500DA9862 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,9 +80,11 @@
 			children = (
 				5206DB0824F3D65F00DA9862 /* AppDelegate.swift */,
 				5206DB0A24F3D65F00DA9862 /* SceneDelegate.swift */,
-				5206DB2924F3DEED00DA9862 /* ModuleBuilder.swift */,
+				5206DB2924F3DEED00DA9862 /* AssemblyBuilder.swift */,
+				5206DB3B24F4460500DA9862 /* Router.swift */,
 				5206DB2D24F3ED6B00DA9862 /* Services */,
 				5206DB1F24F3D6B800DA9862 /* MainScreenModule */,
+				5206DB2E24F41A5800DA9862 /* SavedScreenModule */,
 				5206DB0E24F3D65F00DA9862 /* Main.storyboard */,
 				5206DB1424F3D66100DA9862 /* Assets.xcassets */,
 				5206DB1624F3D66100DA9862 /* LaunchScreen.storyboard */,
@@ -121,8 +133,35 @@
 			isa = PBXGroup;
 			children = (
 				5206DB2B24F3ED4D00DA9862 /* NetworkSevice.swift */,
+				5206DB3724F4271C00DA9862 /* CoreDataService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		5206DB2E24F41A5800DA9862 /* SavedScreenModule */ = {
+			isa = PBXGroup;
+			children = (
+				5206DB3124F41AA600DA9862 /* View */,
+				5206DB3224F41AAF00DA9862 /* Presenter */,
+			);
+			path = SavedScreenModule;
+			sourceTree = "<group>";
+		};
+		5206DB3124F41AA600DA9862 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5206DB3324F41B2300DA9862 /* SavedViewController.swift */,
+				5206DB3924F4292200DA9862 /* SavedViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5206DB3224F41AAF00DA9862 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				5206DB3524F41B6F00DA9862 /* SavedPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5206DB1824F3D66100DA9862 /* LaunchScreen.storyboard in Resources */,
+				5206DB3A24F4292200DA9862 /* SavedViewController.xib in Resources */,
 				5206DB1524F3D66100DA9862 /* Assets.xcassets in Resources */,
 				5206DB1024F3D65F00DA9862 /* Main.storyboard in Resources */,
 				5206DB2824F3DE2600DA9862 /* MainViewController.xib in Resources */,
@@ -199,10 +239,14 @@
 			files = (
 				5206DB2424F3D7F300DA9862 /* MainPresenter.swift in Sources */,
 				5206DB2624F3D95000DA9862 /* Movie.swift in Sources */,
+				5206DB3624F41B6F00DA9862 /* SavedPresenter.swift in Sources */,
 				5206DB1324F3D65F00DA9862 /* TneMovie.xcdatamodeld in Sources */,
+				5206DB3C24F4460500DA9862 /* Router.swift in Sources */,
+				5206DB3424F41B2300DA9862 /* SavedViewController.swift in Sources */,
 				5206DB0D24F3D65F00DA9862 /* MainViewController.swift in Sources */,
-				5206DB2A24F3DEED00DA9862 /* ModuleBuilder.swift in Sources */,
+				5206DB2A24F3DEED00DA9862 /* AssemblyBuilder.swift in Sources */,
 				5206DB0924F3D65F00DA9862 /* AppDelegate.swift in Sources */,
+				5206DB3824F4271C00DA9862 /* CoreDataService.swift in Sources */,
 				5206DB0B24F3D65F00DA9862 /* SceneDelegate.swift in Sources */,
 				5206DB2C24F3ED4D00DA9862 /* NetworkSevice.swift in Sources */,
 			);
