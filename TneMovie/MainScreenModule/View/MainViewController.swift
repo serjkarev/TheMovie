@@ -47,8 +47,23 @@ extension MainViewController: UITableViewDataSource {
 }
 
 extension MainViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == ((presenter?.movies.count)! - 1) {
+            let spinner = UIActivityIndicatorView(style: .medium)
+            spinner.startAnimating()
+            spinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: tableView.bounds.width, height: CGFloat(144))
+            self.tableView?.tableFooterView = spinner
+            self.tableView?.tableFooterView?.isHidden = false
+            presenter?.getPage()
+        }
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        showAlertFor(indexPath)
+    }
+    
+    func showAlertFor(_ indexPath: IndexPath) {
         let movie = presenter?.movies[indexPath.row]
         let alert = UIAlertController(title: "Add to Favorite?", message: "If you agree, \"\(movie?.title ?? "")\" will be added to your favorites", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -65,7 +80,6 @@ extension MainViewController: MainViewProtocol {
     }
     
     func failure(error: Error) {
-        // add alert controller
         print(error.localizedDescription)
     }
 }

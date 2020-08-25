@@ -14,7 +14,6 @@ protocol NetworkServiceProtocol {
 
 class NetworkSevice: NetworkServiceProtocol {
     private let apiKey: String = "831eb7625ee6ccfe26505e0935870afa"
-    private let apiBaseURL: String = "https://api.themoviedb.org/3"
     
     func getPopularMovies(page: Int, completion: @escaping (Result<Page?, Error>) -> Void) {
         var urlComponents = URLComponents()
@@ -24,8 +23,7 @@ class NetworkSevice: NetworkServiceProtocol {
         urlComponents.queryItems = [
             URLQueryItem(name: "api_key", value: apiKey),
             URLQueryItem(name: "language", value: "en-US"),
-            URLQueryItem(name: "page", value: String(page))
-        ]
+            URLQueryItem(name: "page", value: String(page))]
         guard let url = urlComponents.url else { return }
         URLSession.shared.dataTask(with: url) { data, _, error in
             if let error = error {

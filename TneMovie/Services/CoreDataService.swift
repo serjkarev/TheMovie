@@ -66,7 +66,6 @@ class CoreDataService: CoreDataServiceProtocol {
         } catch {
             print(error.localizedDescription)
         }
-        
         do {
             try context.save()
         } catch {

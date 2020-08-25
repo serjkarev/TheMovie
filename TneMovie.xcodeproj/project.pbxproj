@@ -24,6 +24,7 @@
 		5206DB3824F4271C00DA9862 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5206DB3724F4271C00DA9862 /* CoreDataService.swift */; };
 		5206DB3A24F4292200DA9862 /* SavedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5206DB3924F4292200DA9862 /* SavedViewController.xib */; };
 		5206DB3C24F4460500DA9862 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5206DB3B24F4460500DA9862 /* Router.swift */; };
+		5237037024F4956A007FD35B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5237036F24F4956A007FD35B /* Reachability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		5206DB3724F4271C00DA9862 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		5206DB3924F4292200DA9862 /* SavedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavedViewController.xib; sourceTree = "<group>"; };
 		5206DB3B24F4460500DA9862 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		5237036F24F4956A007FD35B /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				5206DB0A24F3D65F00DA9862 /* SceneDelegate.swift */,
 				5206DB2924F3DEED00DA9862 /* AssemblyBuilder.swift */,
 				5206DB3B24F4460500DA9862 /* Router.swift */,
+				5237036F24F4956A007FD35B /* Reachability.swift */,
 				5206DB2D24F3ED6B00DA9862 /* Services */,
 				5206DB1F24F3D6B800DA9862 /* MainScreenModule */,
 				5206DB2E24F41A5800DA9862 /* SavedScreenModule */,
@@ -249,6 +252,7 @@
 				5206DB3824F4271C00DA9862 /* CoreDataService.swift in Sources */,
 				5206DB0B24F3D65F00DA9862 /* SceneDelegate.swift in Sources */,
 				5206DB2C24F3ED4D00DA9862 /* NetworkSevice.swift in Sources */,
+				5237037024F4956A007FD35B /* Reachability.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
