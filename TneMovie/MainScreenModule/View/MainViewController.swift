@@ -17,8 +17,18 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView?.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        setupNavBar()
     }
     
+    func setupNavBar() {
+        self.title = "Popular"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Favorites", style: .plain, target: self, action: #selector(favoritesTapped))
+    }
+    
+    @objc
+    func favoritesTapped() {
+        presenter?.favoritesButtonPressed()
+    }
 }
 
 extension MainViewController: UITableViewDataSource {
@@ -38,6 +48,7 @@ extension MainViewController: UITableViewDataSource {
 
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let movie = presenter?.movies[indexPath.row]
         let alert = UIAlertController(title: "Add to Favorite?", message: "If you agree, \"\(movie?.title ?? "")\" will be added to your favorites", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))

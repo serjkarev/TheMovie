@@ -10,7 +10,7 @@ import UIKit
 
 protocol AssemblyBuilderProtocol {
     func createMainModule(router: RouterProtocol) -> UIViewController
-    func createSavedModule(router: RouterProtocol, movies: [Movie]?) -> UIViewController
+    func createSavedModule(router: RouterProtocol) -> UIViewController
 }
 
 class AssemblyBuilder: AssemblyBuilderProtocol {
@@ -23,7 +23,7 @@ class AssemblyBuilder: AssemblyBuilderProtocol {
         return view
     }
     
-    func createSavedModule(router: RouterProtocol, movies: [Movie]?) -> UIViewController {
+    func createSavedModule(router: RouterProtocol) -> UIViewController {
         let view = SavedViewController()
         let coreDataService = CoreDataService()
         let presenter = SavedPresenter(view: view, coreDataService: coreDataService, router: router)

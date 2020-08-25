@@ -20,8 +20,8 @@ protocol MainViewPresenterProtocol: class {
          router: RouterProtocol)
     
     func getPage()
-    func tapOnSaved(movie: [Movie]?)
     func saveToFavorits(movie: Movie?)
+    func favoritesButtonPressed()
     
     var pages: [Page] { get set }
     var movies: [Movie] { get set }
@@ -68,8 +68,8 @@ class MainPresenter: MainViewPresenterProtocol {
         }
     }
     
-    func tapOnSaved(movie: [Movie]?) {
-        router?.showSaved(movies: movie)
+    func favoritesButtonPressed() {
+        router?.showSaved()
     }
     
     func saveToFavorits(movie: Movie?) {

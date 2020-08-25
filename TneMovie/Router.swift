@@ -15,7 +15,7 @@ protocol MainRouter {
 
 protocol RouterProtocol: MainRouter {
     func initialViewController()
-    func showSaved(movies: [Movie]?)
+    func showSaved()
 //    func popToRoot()
 }
 
@@ -35,9 +35,9 @@ class Router: RouterProtocol {
         }
     }
     
-    func showSaved(movies: [Movie]?) {
+    func showSaved() {
         if let navigationController = navigationController {
-            guard let savedViewController = assemblyBuilder?.createSavedModule(router: self, movies: movies) else { return }
+            guard let savedViewController = assemblyBuilder?.createSavedModule(router: self) else { return }
             navigationController.pushViewController(savedViewController, animated: true)
         }
     }
